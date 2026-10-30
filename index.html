@@ -205,7 +205,7 @@ function vEstudar(){
   if(session&&it){
     var c=byId(it.id);
     h+='<div class="progress"><i style="width:'+Math.round(100*session.done/Math.max(1,session.total))+'%"></i></div>';
-    h+='<div class="small muted" style="margin-bottom:8px">'+session.done+' de '+session.total+' · restam '+session.queue.length+(it.again?' · <b>revisão do erro</b>':'')+'</div>';
+    h+='<div class="small muted" style="margin-bottom:8px">'+'Faltam <b>'+session.queue.length+'</b> de '+session.total+' · '+session.done+' respondidas'+(session.removed?' · '+session.removed+' removidas':'')+(it.again?' · <b>revisão do erro</b>':'')+'</div>';
     h+='<div class="card">'+(c.topic?'<div class="topic">'+esc(c.topic)+'</div>':'')+'<div class="front">'+esc(c.front_pt)+'</div>';
     if(session.revealed){
       h+='<div class="back"><div class="es">'+esc(c.back_es)+'</div>'+(c.example?'<div class="ex">'+esc(c.example)+'</div>':'')+'</div>';
